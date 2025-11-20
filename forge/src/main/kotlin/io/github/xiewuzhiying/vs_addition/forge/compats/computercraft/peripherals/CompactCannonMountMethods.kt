@@ -55,7 +55,9 @@ open class CompactCannonMountMethods : GenericPeripheral {
         if (tileEntity.`vs_addition$getContraption`()?.level() is ServerLevel) {
             (tileEntity.`vs_addition$getContraption`()?.contraption as? MountedAutocannonContraptionMixinDuck)?.`vs_addition$setIsCalledByComputer`()
             (tileEntity.`vs_addition$getContraption`()?.contraption as AbstractMountedCannonContraption).fireShot(tileEntity.`vs_addition$getContraption`()?.level() as ServerLevel, tileEntity.`vs_addition$getContraption`())
+            return true
         }
+        return false
     }
 
     @LuaFunction(mainThread = true)
